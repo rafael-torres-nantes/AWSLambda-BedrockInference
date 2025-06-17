@@ -1,4 +1,4 @@
-Collecting workspace information# AWS Lambda - Bedrock Inference com Modelos de IA
+# AWS Lambda - Bedrock Inference com Modelos de IA
 
 ## 👨‍💻 Projeto desenvolvido por: 
 [Rafael Torres Nantes](https://github.com/rafael-torres-nantes)
@@ -201,9 +201,3 @@ Durante o desenvolvimento do projeto, algumas dificuldades foram enfrentadas, co
 - **Templates de prompt**: Desenvolvimento de templates flexíveis que funcionem efetivamente com diferentes modelos de IA
 - **Controle de custos**: Balanceamento entre qualidade das respostas e otimização de custos de uso dos modelos
 - **Timeouts de Lambda**: Otimização do código para evitar timeouts em inferências mais complexas
-
----
-
-**Desenvolvido com ❤️ por [Rafael Torres Nantes](https://github.com/rafael-torres-nantes)**
-
-Similar code found with 1 license type
