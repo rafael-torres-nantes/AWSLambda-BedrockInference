@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Obtem-se o ID do foundation model a partir das variáveis de ambiente
-CLAUDE_MODEL_ID = os.getenv('CLAUDE_MODEL_ID') # ID do modelo Claude para geração de texto
+CLAUDE_MODEL_ID = os.getenv('ANTHROPIC_CLAUDE_SONNET_MODEL_ID') # ID do modelo Claude para geração de texto
 
 class BedrockInference:
     def __init__(self):
@@ -85,3 +85,37 @@ class BedrockInference:
         response_text = response_body.get('content')[0]['text']
 
         return response_text  # Retorna o texto gerado
+    
+if __name__ == "__main__":
+
+    bedrock_service = BedrockInference()
+
+    # Exemplo de uso da classe BedrockInference
+    response = bedrock_service.invoke_model('bom dia, qual é seu nome?')
+    print(response)
+
+    # Lista de perguntas para o modelo Bedrock
+    questions = [
+        "What is your favorite color?",
+        "What is your favorite food?",
+        "What is your favorite movie?",
+        "What is your favorite book?",
+        "What is your favorite hobby?",
+        "What is your favorite sport?",
+        "What is your favorite animal?",
+        "What is your favorite season?",
+        "What is your favorite holiday?",
+        "What is your favorite song?",
+        "What is your favorite TV show?",
+        "What is your favorite game?",
+        "What is your favorite subject in school?",
+        "What is your favorite place to visit?",
+        "What is your favorite type of music?"
+    ]
+
+    # Itera sobre as perguntas e invoca o modelo Bedrock para cada uma
+    for question in questions:
+        response = bedrock_service.invoke_model(question)
+        print(f"Question: {question}\nResponse: {response}\n")
+        import time 
+        time.sleep(1)
